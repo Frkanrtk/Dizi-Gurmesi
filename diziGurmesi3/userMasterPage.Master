@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="userMasterPage.Master.cs" Inherits="diziGurmesi3.userHomePage" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <style>
+        .user-welcome {
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            min-width: 150px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div id="header" class="d-flex justify-content-between align-items-center">
+                <div class="col-md-3">
+                    <img id="logo" src="logo.png" alt="Logo" class="img-fluid" />
+                </div>
+                <div class="col-md-6">
+                    <input type="text" placeholder="Arama..." class="form-control" />
+                </div>
+                <div class="col-md-3">
+                    <div class="user-menu">
+                        <asp:Label ID="lblHoşgeldin" runat="server" CssClass="user-welcome"></asp:Label>
+                        <div class="dropdown">
+                            <i class="fas fa-chevron-down user-menu-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="profileSettings.aspx">Profil Ayarları</a>
+                                <a class="dropdown-item" href="homePage.aspx">Çıkış Yap</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul id="menu" class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="userHomePage.aspx">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Kategoriler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="userTrend.aspx">Trendler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="userAllSeries.aspx">Tüm Diziler</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="userLegends.aspx">Efsaneler</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </form>
+</body>
+</html>

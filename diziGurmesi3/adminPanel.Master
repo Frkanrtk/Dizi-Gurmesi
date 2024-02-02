@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="adminPanel.master.cs" Inherits="diziGurmesi3.adminPanel" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .sidebar {
+            background-color: #f8f9fa; 
+            padding: 40px;
+            height: 100%; 
+            position: fixed;
+        }
+
+        .sidebar-sticky {
+            padding-top: 40px;
+        }
+        .logout-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-md-2 sidebar    ">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="adminPanelKullanicilar.aspx">
+                                    Kullanıcı Listesi
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="adminPanelDiziler.aspx">
+                                    Diziler
+                                </a>
+                            </li>   
+                            <li class="nav-item">
+                                <a class="nav-link" href="adminPanelYorumlar.aspx">
+                                    Yorumlar
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#yorumFiltreleme">
+                                    Yorum Filtreleme
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </main>
+            </div>
+        </div>
+         <asp:Button ID="btnOturumKapat" runat="server" Text="Oturumu Kapat" OnClick="btnOturumKapat_Click" CssClass="btn btn-danger logout-btn" />
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </form>
+</body>
+</html>
